@@ -1,0 +1,90 @@
+/** GLOBAL PROPERTIES **/
+* {
+  /* outline: 1px solid red; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: #202a44;
+}
+
+.application-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/** NAVIGATION PROPERTIES **/
+.navigation {
+  display: flex;
+  flex-direction: row;
+  column-gap: 100px;
+  margin-top: 50px;
+}
+
+.navigation__start {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  border: none;
+  background-color: #77dd77;
+  border-radius: 25px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+.navigation__start:hover {
+  cursor: pointer;
+  background-color: #63b763;
+}
+
+.navigation__previous,
+.navigation__next {
+  font-family: "Roboto", sans-serif;
+  border: none;
+  color: #32426a;
+  background-color: #202a44;
+  font-size: 1.875rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.navigation__previous:hover,
+.navigation__next:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/** CARD PROPERTIES **/
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 25px;
+  width: 300px;
+  height: 450px;
+  position: relative;
+}
+
+.card__top-suit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card__selected-workout {
+  font-size: 1.875rem;
+}
+
+.card__bottom-suit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
