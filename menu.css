@@ -1,0 +1,156 @@
+/** GLOBAL PROPERTIES **/
+* {
+  /* outline: 1px solid red; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: #202a44;
+}
+
+/** CARD PROPERTIES **/
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 25px;
+  width: 300px;
+  height: 450px;
+  position: relative;
+}
+
+.card__top-suit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card__title {
+  font-size: 1.875rem;
+}
+
+span {
+  color: #ff0000;
+}
+
+.card__bottom-suit {
+  position: absolute;
+  transform: rotate(180deg);
+  bottom: 0;
+  right: 0;
+}
+
+/** NAVIGATION PROPERTIES **/
+.menu-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+  margin-top: 20px;
+}
+
+.menu__ready-button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.125rem;
+  border: none;
+  background-color: #77dd77;
+  border-radius: 25px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+.menu__ready-button:hover {
+  cursor: pointer;
+  background-color: #63b763;
+}
+
+.help-button {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 1.125rem;
+  border: none;
+  background-color: #455785;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.help-button:hover {
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000cb;
+}
+
+.modal-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+}
+
+.close-modal-button {
+  position: absolute;
+  right: 5%;
+  top: 3%;
+  border: none;
+  text-align: center;
+  font-size: 1.125rem;
+  color: #ffffff;
+  background-color: #00000000;
+}
+
+.close-modal-button:hover {
+  cursor: pointer;
+  color: #ebebeb;
+}
+
+.modal-heading {
+  font-size: 1.875rem;
+  text-decoration: underline;
+}
+
+.modal-text {
+  font-size: 1.125rem;
+  width: 85%;
+}
+
+.hidden {
+  display: none;
+}
+
+/** RESPONSIVE DESIGN - DESKTOP **/
+@media screen and (min-width: 1000px) {
+  .close-modal-button {
+    right: 3%;
+  }
+
+  .modal-text {
+    width: 50%;
+  }
+}
