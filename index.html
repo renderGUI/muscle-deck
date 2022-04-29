@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link href="/style.css" type="text/css" rel="stylesheet" />
-    <script defer src="/script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
+    <link href="/menu.css" type="text/css" rel="stylesheet" />
+    <link href="/game.css" type="text/css" rel="stylesheet" />
+    <script defer src="/index.js"></script>
     <title>Muscle Deck</title>
-</head>
-<body>
-    <div class="application-container">
+  </head>
+  <body>
+    <div class="menu-container">
+      <div class="card">
+        <img class="card__top-suit" src="/images/suit--spades.png" />
+        <h2 class="card__title">MUSCLE <span>DECK</span></h2>
+        <img class="card__bottom-suit" src="/images/suit--spades.png" />
+      </div>
 
-        <div class="card">
-            <img class="card__top-suit" src="/images/suit--clubs.png">
-            <h2 class="card__selected-workout">BURPEES</h2>
-            <img class="card__bottom-suit" src="/images/suit--clubs.png">
-        </div>
-
-        <div class="navigation">
-        <button class="navigation__previous" type="button"><</button>
-        <button class="navigation__start" type="button">START</button>
-        <button class="navigation__next" type="button">></button>
-        </div>
-
+      <div class="menu">
+        <button class="menu__ready-button" type="button">READY?</button>
+        <button type="button" class="help-button">i</button>
+      </div>
     </div>
-</body>
+
+    <div class="modal hidden">
+      <div class="modal-content">
+        <button type="button" class="close-modal-button">x</button>
+        <p class="modal-heading">How to Play</p>
+        <p class="modal-text">
+          Muscle Deck is a workout-based game that focuses on bodyweight
+          exercises. Whereas a typical deck has 52 cards, Muscle Deck only has
+          36 cards — there's no Aces, Kings, Queens, or Jacks. The deck of cards
+          is shuffled at the beginning of every game. Each suit represents an
+          exercise: spades for push-ups, hearts for squats, diamonds for
+          pull-ups, and clubs for burpees. This adds up for a total of 52 reps
+          for each exercise. All you have to do is go through the entire deck as
+          fast as you can!
+        </p>
+      </div>
+    </div>
+
+    <div class="game-container hidden">
+      <div class="game-card unselectable">
+        <img class="game-card__top-suit suit" />
+        <h2 class="rep-amount"></h2>
+        <h2 class="game__message hidden">WORKOUT <span>COMPLETE</span></h2>
+        <h2 class="exercise"></h2>
+        <img class="game-card__bottom-suit suit" />
+      </div>
+
+      <div class="progress">
+        <p class="progress__text"></p>
+        <button type="button" class="new-game-button hidden">New Game?</button>
+      </div>
+    </div>
+  </body>
 </html>
