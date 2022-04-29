@@ -85,9 +85,9 @@ span {
   font-size: 1.125rem;
   border: none;
   background-color: #455785;
+  padding-left: 9px;
+  padding-right: 9px;
   border-radius: 50%;
-  width: 25px;
-  height: 25px;
   color: #ffffff;
 }
 
