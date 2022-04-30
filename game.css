@@ -1,3 +1,7 @@
+* {
+  /* outline: 1px solid red; */
+}
+
 .game-container {
   display: flex;
   height: 100vh;
@@ -48,10 +52,26 @@ span {
 
 .progress {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: center;
   margin-top: 20px;
   font-size: 1.125rem;
   color: #ffffff;
+}
+
+.progress-bar {
+  background-color: #455785;
+  border-radius: 25px;
+  width: 200px;
+  height: 10px;
+}
+
+.current-progress {
+  background-color: #fec761;
+  border-radius: 25px;
+  width: 0%;
+  height: 10px;
+  transition: .3s ease-in-out;
 }
 
 .new-game-button {

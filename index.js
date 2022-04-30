@@ -12,6 +12,8 @@ const suitUI = document.querySelectorAll(".suit");
 const repsUI = document.querySelector(".rep-amount");
 const exerciseUI = document.querySelector(".exercise");
 const progressUI = document.querySelector(".progress__text");
+const progressBar = document.querySelector(".progress-bar");
+const currentProgressBar = document.querySelector(".current-progress");
 const newGameButton = document.querySelector(".new-game-button");
 const gameMessage = document.querySelector(".game__message");
 
@@ -19,6 +21,7 @@ function startGame() {
   menuScreen.classList.add("hidden");
   gameScreen.classList.remove("hidden");
   pickCard();
+  updateProgress();
 }
 
 function openModal() {
@@ -29,11 +32,14 @@ function closeModal() {
   modal.classList.add("hidden");
 }
 
-let progress = 1;
+let progress = 0;
 progressUI.textContent = `${progress}/36`;
 function updateProgress() {
   progress++;
+  console.log(`current progress: ${progress}`);
   progressUI.textContent = `${progress}/36`;
+  let progressAsPercentage = (progress / 36) * 100;
+  currentProgressBar.style.width = `${progressAsPercentage}%`;
 }
 
 class Card {
@@ -160,6 +166,8 @@ function endGame() {
   exerciseUI.classList.add("hidden");
   gameMessage.classList.remove("hidden");
   progressUI.classList.add("hidden");
+  progressBar.classList.add("hidden");
+  currentProgressBar.classList.add("hidden");
   newGameButton.classList.remove("hidden");
 }
 
