@@ -14,14 +14,15 @@ const exerciseUI = document.querySelector(".exercise");
 const progressUI = document.querySelector(".progress__text");
 const progressBar = document.querySelector(".progress-bar");
 const currentProgressBar = document.querySelector(".current-progress");
+
+// SUMMARY VARIABLES
+const summaryScreen = document.querySelector(".summary-container");
 const newGameButton = document.querySelector(".new-game-button");
-const gameMessage = document.querySelector(".game__message");
 
 function startGame() {
   menuScreen.classList.add("hidden");
   gameScreen.classList.remove("hidden");
   pickCard();
-  updateProgress();
 }
 
 function openModal() {
@@ -36,10 +37,15 @@ let progress = 0;
 progressUI.textContent = `${progress}/36`;
 function updateProgress() {
   progress++;
-  console.log(`current progress: ${progress}`);
+  console.log(progress);
   progressUI.textContent = `${progress}/36`;
   let progressAsPercentage = (progress / 36) * 100;
   currentProgressBar.style.width = `${progressAsPercentage}%`;
+
+  if (progress == 36) {
+    currentProgressBar.style.backgroundColor = "#77dd77";
+    cardButton.removeEventListener("click", nextCard);
+  }
 }
 
 class Card {
@@ -150,25 +156,19 @@ function pickCard() {
 }
 
 function nextCard() {
-  if (progress < 36) {
+  if (progress < 35) {
     pickCard();
     updateProgress();
   } else {
-    endGame();
+    setTimeout(endGame, 1000);
+    updateProgress();
   }
 }
 
 function endGame() {
-  for (const icon of suitUI) {
-    icon.classList.add("hidden");
-  }
-  repsUI.classList.add("hidden");
-  exerciseUI.classList.add("hidden");
-  gameMessage.classList.remove("hidden");
-  progressUI.classList.add("hidden");
-  progressBar.classList.add("hidden");
-  currentProgressBar.classList.add("hidden");
-  newGameButton.classList.remove("hidden");
+  gameScreen.classList.add("hidden");
+  summaryScreen.classList.remove("hidden");
+  document.body.style.backgroundColor = "#242424";
 }
 
 function newGame() {
@@ -178,7 +178,6 @@ function newGame() {
 function removeCardFromArray(card) {
   const cardIndex = deckArray.indexOf(card);
   deckArray.splice(cardIndex, 1);
-  console.log(deckArray);
   console.log(`Deck array length: ${deckArray.length}`);
 }
 

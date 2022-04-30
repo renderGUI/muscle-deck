@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" />
     <link href="/menu.css" type="text/css" rel="stylesheet" />
     <link href="/game.css" type="text/css" rel="stylesheet" />
+    <link href="/summary.css" type="text/css" rel="stylesheet" />
     <script defer src="/index.js"></script>
     <title>Muscle Deck</title>
   </head>
   <body>
+    <!-- MENU UI -->
     <div class="menu-container">
       <div class="card">
         <img class="card__top-suit" src="/images/suit--spades.png" />
@@ -27,6 +29,7 @@
       <a href="https://github.com/renderGUI/muscle-deck"><img class="github-link" src="/images/github-logo.png" alt="github logo"></a>
     </div>
 
+    <!-- MODAL UI-->
     <div class="modal hidden">
       <div class="modal-content">
         <button type="button" class="close-modal-button">x</button>
@@ -37,13 +40,14 @@
           36 cards — there's no Aces, Kings, Queens, or Jacks. The deck of cards
           is shuffled at the beginning of every game. Each suit represents an
           exercise: spades for push-ups, hearts for squats, diamonds for
-          pull-ups, and clubs for burpees. This adds up for a total of 52 reps
+          pull-ups, and clubs for burpees. This adds up for a total of 54 reps
           for each exercise. All you have to do is go through the entire deck as
           fast as you can!
         </p>
       </div>
     </div>
 
+    <!-- GAME UI -->
     <div class="game-container hidden">
       <div class="game-card unselectable">
         <img class="game-card__top-suit suit" />
@@ -58,8 +62,25 @@
         <div class="progress-bar">
           <div class="current-progress"></div>
         </div>
-        <button type="button" class="new-game-button hidden">New Game?</button>
       </div>
     </div>
+
+    <!-- SUMMARY UI-->
+    <div class="summary-container hidden">
+      <div class="summary-card unselectable">
+        <h2 class="summary__message">WORKOUT <span>COMPLETE</span></h2>
+        <div class="summary-score">
+        <p class="summary-exercise"><img class="summary-suit" src="/images/suit--spades.png">PUSH-UPS (54)</p>
+        <p class="summary-exercise"><img class="summary-suit" src="/images/suit--hearts.png"><span>SQUATS (54)</span></p>
+        <p class="summary-exercise"><img class="summary-suit" src="/images/suit--diamonds.png"><span>PULL-UPS (54)</span></p>
+        <p class="summary-exercise"><img class="summary-suit" src="/images/suit--clubs.png">BURPEES (54)</p>
+        </div>
+      </div>
+
+      <div class="new-game">
+        <button type="button" class="new-game-button">New Game?</button>
+      </div>
+    </div>
+
   </body>
 </html>

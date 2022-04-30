@@ -74,21 +74,6 @@ span {
   transition: .3s ease-in-out;
 }
 
-.new-game-button {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.125rem;
-  border: none;
-  background-color: #77dd77;
-  border-radius: 25px;
-  padding: 10px;
-  color: #ffffff;
-}
-
-.new-game-button:hover {
-  cursor: pointer;
-  background-color: #63b763;
-}
-
 .unselectable {
   -moz-user-select: none;
   -khtml-user-select: none;
