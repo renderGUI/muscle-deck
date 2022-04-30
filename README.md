@@ -47,6 +47,8 @@ git clone https://github.com/renderGUI/muscle-deck.git
 
 ## Version History
 
+- **1.2.1**: Fixed a bug where the initial progress would start at 1 instead of 0.
+
 - **1.2.0**: Implementation of a dynamic progress bar that updates every time an exercise is completed.
 
 - **1.0.0**: Initial release.
