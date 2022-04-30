@@ -37,7 +37,6 @@ let progress = 0;
 progressUI.textContent = `${progress}/36`;
 function updateProgress() {
   progress++;
-  console.log(progress);
   progressUI.textContent = `${progress}/36`;
   let progressAsPercentage = (progress / 36) * 100;
   currentProgressBar.style.width = `${progressAsPercentage}%`;
@@ -178,7 +177,6 @@ function newGame() {
 function removeCardFromArray(card) {
   const cardIndex = deckArray.indexOf(card);
   deckArray.splice(cardIndex, 1);
-  console.log(`Deck array length: ${deckArray.length}`);
 }
 
 readyButton.addEventListener("click", startGame);
